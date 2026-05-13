@@ -1,11 +1,12 @@
 {
-	"threshold": -4,
-    "med_filter_bin": 3,
-    "rv_min": -200,
-    "rv_max": 200,
-    "cutoff": 2,
-    "width_filt": 3,
+	"threshold": -3.5,
+    "med_filter_bin": 2,
+    "rv_min": -250,
+    "rv_max": 250,
+    "cutoff": 1.5,
+    "width_filt": 2,
     "dataset": "/home/msp25gd/Downloads/res/dataset/",
-    "SNR_cut": 10,
+    "SNR_cut": 5,
+    "min_spectra": 3,
     "cores": 4
 }
