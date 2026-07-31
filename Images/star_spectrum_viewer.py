@@ -71,23 +71,25 @@ def plot_star_spectrum(star_name):
     if sK.shape[1] != len(wK):
         raise ValueError(f'K-band shape mismatch: spectra {sK.shape}, wavelength {len(wK)}')
 
-    fig, axes = plt.subplots(2, 1, figsize=(10, 6), sharex=False)
+    fig, axes = plt.subplots(2, 1, figsize=(11, 7), sharex=True)
 
-    for spec in sH:
-        axes[0].plot(wH, spec, color='tab:blue', linewidth=0.8, alpha=0.6)
-    for spec in sK:
-        axes[1].plot(wK, spec, color='tab:orange', linewidth=0.8, alpha=0.6)
+    for ax, wavelengths, spectra, title in [
+        (axes[0], wH, sH, 'H band'),
+        (axes[1], wK, sK, 'K band'),
+    ]:
+        for spec in spectra:
+            ax.plot(wavelengths, spec, color='grey', linewidth=1.0, alpha=0.45, zorder=1)
 
-    axes[0].set_title(f'{star_name} — H band')
-    axes[0].set_ylabel('Flux')
-    axes[0].grid(alpha=0.25)
+        median_spec = np.nanmedian(spectra, axis=0)
+        ax.plot(wavelengths, median_spec, color='red', linewidth=2.2, label='Median reference', zorder=5)
 
-    axes[1].set_title(f'{star_name} — K band')
+        ax.set_title(f'{star_name} - {title}')
+        ax.set_ylabel('Normalised Flux')
+        ax.grid(alpha=0.3)
+        ax.legend(loc='best')
+
     axes[1].set_xlabel('Wavelength')
-    axes[1].set_ylabel('Flux')
-    axes[1].grid(alpha=0.25)
-
-    fig.suptitle(f'Spectrum for {star_name}', fontsize=12)
+    fig.suptitle(f'{star_name} spectrum', fontsize=12)
     fig.tight_layout()
     plt.show()
 
