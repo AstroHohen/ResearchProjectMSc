@@ -1,0 +1,39 @@
+{
+    "data_dir": "./harps_data",
+    "lines_nm": {
+        "K": 393.366,
+        "H": 396.847
+    },
+    "half_window_nm": 1.0,
+    "workers": 16,
+    "max_attempts": 5,
+    "request_timeout_s": 120,
+    "tap_url": "https://archive.eso.org/tap_obs/sync",
+    "soda_url": "https://dataportal.eso.org/dataPortal/soda/sync",
+    "priority_targets": [
+        "HD39060",
+        "HD039060",
+        "bet Pic",
+        "beta Pic",
+        "BetaPic",
+        "Beta-Pic",
+        "HD172555",
+        "HD10638",
+        "HD60753",
+        "HD27679",
+        "BP Tau",
+        "HD225213",
+        "Gl1",
+        "GJ1",
+        "HIP5158",
+        "HD94771",
+        "HR1996",
+        "HD38666",
+        "HD207278",
+        "HD358",
+        "HD22049",
+        "TW Hya",
+        "HD43285",
+        "HD112842"
+    ]
+}
