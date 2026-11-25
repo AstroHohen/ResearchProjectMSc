@@ -1,0 +1,84 @@
+{
+    "search": {
+        "med_filter_bin": 3,
+        "threshold": -3.5,
+        "rv_min": -250,
+        "rv_max": 250,
+        "cutoff": 1.5,
+        "width_filt": 2,
+        "local_window": 301,
+        "local_guard": 40,
+        "local_step": 10,
+        "dataset": "C:/data/harps/dataset/",
+        "cores": 12,
+        "chunk": 300,
+        "velocity_limit_kms": 200,
+        "fwhm_kms": [
+            3,
+            5,
+            10,
+            20,
+            30
+        ],
+        "min_line_score": 2.0,
+        "max_pca_rank": 10,
+        "null_shifts": 200,
+        "null_max_epochs": 1000,
+        "diagnostic_score": 7.0,
+        "confirm_score": 5.5,
+        "slow_budget_factor": 10000,
+        "tail_method": "bookkeeping",
+        "spike_mask": false,
+        "null_ratio_check": true
+    },
+    "classes": {
+        "OB": {
+            "from": "O0",
+            "to": "B9",
+            "activity_mask_kms": 0,
+            "min_spectra": 15,
+            "confidence": "anomaly"
+        },
+        "A_earlyF": {
+            "from": "A0",
+            "to": "F4",
+            "activity_mask_kms": 0,
+            "min_spectra": 15,
+            "confidence": "detection"
+        },
+        "lateF_G_K": {
+            "from": "F5",
+            "to": "K9",
+            "activity_mask_kms": 50,
+            "min_spectra": 15,
+            "confidence": "detection"
+        },
+        "M": {
+            "from": "M0",
+            "to": "M9",
+            "activity_mask_kms": 50,
+            "min_spectra": 15,
+            "confidence": "anomaly"
+        }
+    },
+    "tests": {
+        "rule": "type_weight",
+        "shape_mode": "weighted",
+        "false_alarm_survey": 0.01,
+        "searches": 2,
+        "repeat_false_alarm": 0.01,
+        "min_control_score": -3.0,
+        "max_control_corr": 0.5,
+        "control_informative": -3.0,
+        "max_period_fap": 0.001,
+        "max_period_share": 0.5,
+        "min_transit_minutes": 10,
+        "max_rv_shift_corr": 0.5,
+        "max_emission_twin": 0.7,
+        "min_shape_corr": 0.5,
+        "max_activity_corr": 0.5,
+        "stable_velocity_kms": 4,
+        "stable_min_nights": 3,
+        "split_spectrum_night": false
+    }
+}

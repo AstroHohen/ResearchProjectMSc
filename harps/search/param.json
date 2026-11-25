@@ -1,0 +1,12 @@
+{
+    "threshold": -3.5,
+    "med_filter_bin": 3,
+    "rv_min": -250,
+    "rv_max": 250,
+    "cutoff": 1.5,
+    "width_filt": 2,
+    "dataset": "C:/data/harps/dataset/",
+    "SNR_cut": 5,
+    "min_spectra": 3,
+    "cores": 12
+}
